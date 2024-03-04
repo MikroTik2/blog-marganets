@@ -5,8 +5,8 @@
   "main": "express.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bin/www.js",
-    "server": "nodemon bin/www.js"
+    "start": "node express.js",
+    "server": "nodemon express.js"
   },
   "keywords": [],
   "author": "",
