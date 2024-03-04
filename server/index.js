@@ -14,10 +14,6 @@ const port = process.env.PORT || process.env.PORT_NODE;
 const app = express();
 const server = http.createServer(app);
 
-app.get("/", (req, res) => {
-     res.send("dfsdfpsdjifs");
-});
-
 const userRoute = require("./routes/userRoute.js");
 const blogRoute = require("./routes/blogRoute.js");
 
@@ -34,9 +30,10 @@ app.use(cors({
      credentials: true, 
 }));
 
-mongoose.connect(process.env.MONGO_URL).then(() => {
+mongoose.connect("mongodb+srv://sdfsdgweg2sdgf:OL1WCD74oiOgDJfX@cluster0.dreg8j0.mongodb.net/app").then(() => {
      
      console.log("Successfully connected to the database");
+     server.listen(port);
      
      server.on('error', onError);
      server.on('listening', onListening);
@@ -46,11 +43,15 @@ mongoose.connect(process.env.MONGO_URL).then(() => {
      process.exit(1);
 });
 
-cloudinary.config({
-     cloud_name: process.env.CLOUDINARY_NAME,
-     api_key: process.env.CLOUDINARY_API_KEY,
-     api_secret: process.env.CLOUDINARY_API_SECRET,
+app.get("/", (req, res) => {
+     res.send("Hello world");
 });
+
+// cloudinary.config({
+//      cloud_name: process.env.CLOUDINARY_NAME,
+//      api_key: process.env.CLOUDINARY_API_KEY,
+//      api_secret: process.env.CLOUDINARY_API_SECRET,
+// });
      
 app.use("/api/v2", userRoute);
 app.use("/api/v2", blogRoute);
@@ -76,7 +77,3 @@ function onError(error) {
 function onListening() {
      console.log('HTTP server listening on port ' + port);
 };
-
-server.listen(port, () => {
-     console.log('work');
-});
