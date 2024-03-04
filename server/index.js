@@ -30,50 +30,54 @@ app.use(cors({
      credentials: true, 
 }));
 
-mongoose.connect("mongodb+srv://sdfsdgweg2sdgf:OL1WCD74oiOgDJfX@cluster0.dreg8j0.mongodb.net/app").then(() => {
-     
-     console.log("Successfully connected to the database");
-     server.listen(port);
-     
-     server.on('error', onError);
-     server.on('listening', onListening);
-     
-}).catch(err => {
-     console.log("An error occurred while connecting to the database: " + err);
-     process.exit(1);
-});
+const dbConnect = () => {
+     try {
+
+          const conn = mongoose.connect("mongodb+srv://sdfsdgweg2sdgf:OL1WCD74oiOgDJfX@cluster0.dreg8j0.mongodb.net/app");
+          console.log("connecting.")
+
+     } catch (err) {
+          console.log("error.");
+     };
+};
+
+dbConnect()
 
 app.get("/", (req, res) => {
      res.send("Hello world");
 });
 
-// cloudinary.config({
-//      cloud_name: process.env.CLOUDINARY_NAME,
-//      api_key: process.env.CLOUDINARY_API_KEY,
-//      api_secret: process.env.CLOUDINARY_API_SECRET,
-// });
+cloudinary.config({
+     cloud_name: process.env.CLOUDINARY_NAME,
+     api_key: process.env.CLOUDINARY_API_KEY,
+     api_secret: process.env.CLOUDINARY_API_SECRET,
+});
      
 app.use("/api/v2", userRoute);
 app.use("/api/v2", blogRoute);
 
-function onError(error) {
-     switch (error.code) {
-          case 'EACCES':
-               console.log('Port ' + error.port + ' requires elevated privileges');
-               process.exit(1);
-               break;
+// function onError(error) {
+//      switch (error.code) {
+//           case 'EACCES':
+//                console.log('Port ' + error.port + ' requires elevated privileges');
+//                process.exit(1);
+//                break;
 
-          case 'EADDRINUSE':
-               console.log('Port ' + error.port + ' is already in use');
-               process.exit(1);
-               break;
+//           case 'EADDRINUSE':
+//                console.log('Port ' + error.port + ' is already in use');
+//                process.exit(1);
+//                break;
 
-          default:
-               console.log('An error occurred: ' + error.code);
-               process.exit(1);
-     };
-};
+//           default:
+//                console.log('An error occurred: ' + error.code);
+//                process.exit(1);
+//      };
+// };
                
-function onListening() {
-     console.log('HTTP server listening on port ' + port);
-};
+// function onListening() {
+//      console.log('HTTP server listening on port ' + port);
+// };
+
+server.listen(port, () => {
+     console.log(`Server working on the ${port}`);
+});
