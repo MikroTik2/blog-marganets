@@ -47,11 +47,11 @@ app.get("/", (req, res) => {
      res.send("Hello world");
 });
 
-// cloudinary.config({
-//      cloud_name: process.env.CLOUDINARY_NAME,
-//      api_key: process.env.CLOUDINARY_API_KEY,
-//      api_secret: process.env.CLOUDINARY_API_SECRET,
-// });
+cloudinary.config({
+     cloud_name: process.env.CLOUDINARY_NAME,
+     api_key: process.env.CLOUDINARY_API_KEY,
+     api_secret: process.env.CLOUDINARY_API_SECRET,
+});
      
 app.use("/api/v2", userRoute);
 app.use("/api/v2", blogRoute);
