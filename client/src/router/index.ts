@@ -27,7 +27,7 @@ const router = createRouter({
      routes,
 });
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _, next) => {
      document.title = to.meta.title as string;
      
      const isAuthenticated = localStorage.getItem("auth") === 'true';

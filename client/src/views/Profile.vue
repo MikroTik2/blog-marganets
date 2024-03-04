@@ -85,7 +85,7 @@
      const { toast } = useToast();
 
      const userInfo = ref<UserInfo | null>();
-     const avatarImage = ref<string | null>('');
+          const avatarImage = ref<string>('');
      const avatar = ref('');
      const name = ref('');
 

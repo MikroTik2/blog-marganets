@@ -1,6 +1,6 @@
 <template>
   <DropdownMenu v-if="hidden()">
-    <DropdownMenuTrigger as-child="">
+    <DropdownMenuTrigger>
       <Button variant="ghost" class="relative h-8 w-8 rounded-full">
         <Avatar class="h-8 w-8">
           <AvatarImage :src="avatar" alt="avatar" />
@@ -54,7 +54,7 @@
     const name = ref('');
     const email = ref('');
     const role = ref('');
-    const avatar = ref<string | null>('');
+    const avatar = ref<string>('');
 
     const pushLogin = () => {
         router.push({ name: "SignIn" });
@@ -83,7 +83,7 @@
 
     const hidden = (): boolean => {
       const authValue = localStorage.getItem("auth");
-      return authValue === "true";
+      return authValue === "true" || authValue === null ? true : false;
     };
 
     const logoutUser = async () => {
@@ -131,7 +131,7 @@
         
         email.value = response.user.email;
         name.value = response.user.name
-        avatar.value = response!.user?.avatar?.url;
+        avatar.value = response!.user?.avatar?.url ?? '';
         role.value = response.user.role;
 
     });
