@@ -55,7 +55,7 @@
     const email = ref('');
     const role = ref('');
     const avatar = ref<string>('');
-
+ 
     const pushLogin = () => {
         router.push({ name: "SignIn" });
     };
@@ -83,7 +83,7 @@
 
     const hidden = (): boolean => {
       const authValue = localStorage.getItem("auth");
-      return authValue === "true" || authValue === null;
+      return authValue === "true"
     };
 
     const logoutUser = async () => {
