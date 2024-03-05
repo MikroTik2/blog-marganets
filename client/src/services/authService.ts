@@ -19,7 +19,6 @@ export default {
 			const response = await HTTP.post("/api/v2/register", user);
 
 			localStorage.setItem('role', response.data.user.role);
-			localStorage.setItem('token', response.data.token);
 			localStorage.setItem('auth', true.toString());
 
 			authStore.register(response.data.user.role, response.data.user.avatar, response.data.user.name);
@@ -39,8 +38,6 @@ export default {
 			const avatarUrl = response.data.user.avatar ? response.data.user.avatar.url : null;
 
 			localStorage.setItem('auth', true.toString());
-			localStorage.setItem('token', response.data.token);
-
 			authStore.login(response.data.user.role, avatarUrl, response.data.user.name);
 			
 			return response.data;
@@ -58,7 +55,6 @@ export default {
 
 			localStorage.setItem("name", result.user.name);
 			localStorage.setItem("role", result.user.role);
-			localStorage.setItem('token', response.data.token);
 			localStorage.setItem("auth", true.toString());
 
 			return result;

@@ -6,6 +6,7 @@ const ErrorHandler = require("../utils/errorHandler.js");
 const authMiddleware = asyncHandler(async (req, res, next) => {
 
      const { token } = req.cookies;
+     console.log(token);
      if (!token) return next(new ErrorHandler("Please login to access", 401));
 
      const decoded = jwt.verify(token, "1234567890");
