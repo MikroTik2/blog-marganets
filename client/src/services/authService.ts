@@ -36,6 +36,8 @@ export default {
 			const authStore = useAuthStore();
 			const response = await HTTP.post("/api/v2/login", user);
 
+			console.log(response);
+
 			const avatarUrl = response.data.user.avatar ? response.data.user.avatar.url : null;
 
 			localStorage.setItem('auth', true.toString());

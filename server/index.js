@@ -28,7 +28,8 @@ app.use(morgan("dev"));
 app.use(cors({
      origin: "https://marganets-school.vercel.app",
      credentials: true,
- }));
+}));
+
 
 const dbConnect = () => {
      try {
