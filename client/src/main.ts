@@ -7,12 +7,12 @@ import App from '@/App.vue';
 import router from './router/index';
 
 const firebaseConfig = {
-     apiKey: "AIzaSyCvwy_hdoYlfn9jJCGFHlSeq_eKO4F0lZk",
-     authDomain: "marganets-blogs.firebaseapp.com",
-     projectId: "marganets-blogs",
-     storageBucket: "marganets-blogs.appspot.com",
-     messagingSenderId: "128771123652",
-     appId: "1:128771123652:web:d080cce70c8e89bfb65c91"
+     apiKey: "AIzaSyAMnG-dcob-7_Mo8biqd5F-xjeUlrjYZTI",
+     authDomain: "school-f3a15.firebaseapp.com",
+     projectId: "school-f3a15",
+     storageBucket: "school-f3a15.appspot.com",
+     messagingSenderId: "758481503406",
+     appId: "1:758481503406:web:e6a511899a96c22487193f"
 };
 
 initializeApp(firebaseConfig);
