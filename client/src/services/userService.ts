@@ -71,6 +71,7 @@ export default {
 
      async getMeAccount() {
           const token = document.cookie;
+          console.log(token);
 
           const response = await HTTP.get("/me", {
                headers: {
