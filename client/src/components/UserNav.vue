@@ -49,7 +49,7 @@
     import userService from '@/services/userService';
     import authService from '@/services/authService';
 
-    const router = useRouter();
+    const router = useRouter(); 
 
     const name = ref('');
     const email = ref('');
@@ -83,7 +83,7 @@
 
     const hidden = (): boolean => {
       const authValue = localStorage.getItem("auth");
-      return authValue === "true" || authValue === null ? true : false;
+      return authValue === "true" || authValue === null;
     };
 
     const logoutUser = async () => {
