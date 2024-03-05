@@ -70,8 +70,7 @@ export default {
      },
 
      async getMeAccount() {
-          const token = localStorage.getItem("token");
-          console.log(token);
+          const token = document.cookie;
 
           const response = await HTTP.get("/me", {
                headers: {
