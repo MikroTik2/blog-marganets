@@ -129,10 +129,10 @@
     onMounted(async () => {
         const response = await userService.getMeAccount();
         
-        email.value = response!.user?.email;
-        name.value = response!.user?.name
+        email.value = response.user.email;
+        name.value = response.user.name
         avatar.value = response!.user?.avatar?.url ?? '';
-        role.value = response!.user?.role;
+        role.value = response.user.role;
 
     });
 

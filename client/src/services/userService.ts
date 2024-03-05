@@ -70,7 +70,7 @@ export default {
      },
 
      async getMeAccount() {
-          const token = document.cookie;
+          const token = localStorage.getItem("token");
           console.log(token);
 
           const response = await HTTP.get("/me", {
