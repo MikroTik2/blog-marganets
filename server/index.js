@@ -26,9 +26,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(fileUpload());
 app.use(morgan("dev"));
 app.use(cors({
-     origin: "https://marganets-school.vercel.app/", 
-     credentials: true, 
-}));
+     origin: "https://marganets-school.vercel.app",
+     credentials: true,
+ }));
 
 const dbConnect = () => {
      try {

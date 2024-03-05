@@ -35,6 +35,7 @@ export default {
           try {
 
                const response = await HTTP.get("/blogs");
+               console.log(response);
                return response.data;
 
           } catch (err) {
