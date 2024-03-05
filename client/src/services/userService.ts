@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const HTTP = axios.create({
-	baseURL: 'http://localhost:5050/api/v2',
+	baseURL: 'https://blog-marganets.vercel.app/api/v2',
 	withCredentials: true,
 	headers: {
 		Accept: 'application/json',

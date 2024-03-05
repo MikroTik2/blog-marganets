@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(fileUpload());
 app.use(morgan("dev"));
 app.use(cors({
-     origin: "http://localhost:5173", 
+     origin: "https://marganets-school.vercel.app/", 
      credentials: true, 
 }));
 

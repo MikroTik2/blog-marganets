@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useAuthStore } from '@/stores/authStore.js';
 
 const HTTP = axios.create({
-	baseURL: 'http://localhost:5050',
+	baseURL: 'https://blog-marganets.vercel.app/',
 	withCredentials: true,
 	headers: {
 		Accept: 'application/json',
