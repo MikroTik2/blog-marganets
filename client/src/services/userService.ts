@@ -35,8 +35,7 @@ export default {
      async updateUser(name: string, avatar: string) {
           try {
 
-               const token = document.cookie;
-
+               const token = localStorage.getItem("token");
                const response = await HTTP.put("/me/update", { name, avatar }, {
                     headers: {
                          Authorization: `Bearer ${token}`,
@@ -55,7 +54,7 @@ export default {
      async updatePassword(user: object) {
           try {
 
-               const token = document.cookie;
+               const token = localStorage.getItem("token");
                const response = await HTTP.put("/password/update", user, {
                     headers: {
                          Authorization: `Bearer ${token}`,
@@ -70,7 +69,7 @@ export default {
      },
 
      async getMeAccount() {
-          const token = document.cookie;
+          const token = localStorage.getItem("token");
 
           const response = await HTTP.get("/me", {
                headers: {
