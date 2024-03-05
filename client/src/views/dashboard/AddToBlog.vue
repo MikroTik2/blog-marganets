@@ -24,17 +24,17 @@
 
                          <div>
                               <Label for="description1">Описание 1</Label>
-                              <Input v-model.trim="description1" id="description1" type="text" placeholder="Введите описание 1" />
+                              <textarea class="flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50" placeholder="Type your message here." v-model.trim="description1" id="description1" type="text" />
                          </div>
 
                          <div>
                               <Label for="description2">Описание 2</Label>
-                              <Input v-model="description2" id="description2" type="text" placeholder="Введите описание 2" />
+                              <textarea class="flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50" placeholder="Type your message here." v-model="description2" id="description2" type="text"/>
                          </div>
 
                          <div>
                               <Label for="description3">Описание 3</Label>
-                              <Input v-model="description3" id="description3" type="text" placeholder="Введите описание 3" />
+                              <textarea class="flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50" placeholder="Type your message here." v-model="description3" id="description3" type="text" />
                          </div>
                     
                          <div
