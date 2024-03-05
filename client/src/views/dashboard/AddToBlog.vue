@@ -42,7 +42,7 @@
                               @dragover.prevent
                               @drop="handleImageDrop"
                          >
-                              <Label for="imageUpload" class="cursor-pointer flex items-center justify-center w-full h-full">
+                              <Label for="imageUpload" class="cursor-pointer text-center p-5 flex items-center justify-center w-full h-full">
                                    Перетащите изображение или кликните для загрузки
                               </Label>
 
